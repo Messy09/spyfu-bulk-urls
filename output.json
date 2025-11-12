@@ -1,0 +1,15 @@
+Supported --process values:
+
+top_competitors
+
+most_valuable_keywords
+
+newly_ranked_keywords
+
+top_ads
+
+domain_stats
+
+When use_sample_data is true in src/config/settings.example.json, the client returns realistic fake data and does not contact SpyFu.
+Configuration
+Copy the example settings file and adjust as needed:
