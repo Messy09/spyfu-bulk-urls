@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spyfu-bulk-urls"
+version = "0.1.0"
+description = "SpyFu bulk URLs scraper wrapper with CLI."
+requires-python = ">=3.9"
+authors = [
+  { name = "Bitbash", email = "sale@bitbash.dev" }
+]
+dependencies = [
+  "requests>=2.31.0",
+  "jsonschema>=4.22.0"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
+[project.scripts]
+spyfu-bulk-urls = "src.cli:main"
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
