@@ -1,0 +1,16 @@
+Then pass the path:
+bashpython -m src.cli --settings src/config/settings.json ...
+
+You can configure:
+
+spyfu_base_url
+
+spyfu_api_key
+
+use_sample_data
+
+requests_per_minute
+
+proxies
+
+perl
