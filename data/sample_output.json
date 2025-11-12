@@ -1,0 +1,59 @@
+[
+  {
+    "origin": "https://example.com/",
+    "domain": "example.com",
+    "country": "US",
+    "process_type": "top_competitors",
+    "top_competitors": [
+      {
+        "domain": "competitor1.com",
+        "overlap_score": 0.82,
+        "estimated_monthly_clicks": 14500,
+        "organic_keywords": 2350,
+        "paid_keywords": 410
+      },
+      {
+        "domain": "competitor2.com",
+        "overlap_score": 0.74,
+        "estimated_monthly_clicks": 9800,
+        "organic_keywords": 1875,
+        "paid_keywords": 260
+      }
+    ],
+    "most_valuable_keywords": [
+      {
+        "keyword": "best crm software",
+        "search_volume": 12100,
+        "estimated_value": 5.42,
+        "position": 3,
+        "traffic_share": 0.12
+      }
+    ],
+    "most_successful_keywords": [],
+    "newly_ranked_keywords": [
+      {
+        "keyword": "crm for startups",
+        "search_volume": 2900,
+        "position": 18,
+        "trend": "rising"
+      }
+    ],
+    "top_ads": [
+      {
+        "headline": "All-in-One CRM for SMBs",
+        "description": "Close more deals with automated workflows and analytics.",
+        "ad_type": "text",
+        "landing_page_url": "https://example.com/crm"
+      }
+    ],
+    "domain_stats": {
+      "organic_keywords": 3520,
+      "paid_keywords": 780,
+      "estimated_monthly_clicks": 23800,
+      "estimated_monthly_budget": 12450.0
+    },
+    "timestamp": 1714651200000,
+    "run_id": "spyfu-bulk-urls-2024-001",
+    "notes": "All metrics derived from publicly available SpyFu data."
+  }
+]
