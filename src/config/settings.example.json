@@ -1,0 +1,14 @@
+{
+  "spyfu_base_url": "https://www.spyfu.com",
+  "spyfu_api_key": "YOUR_API_KEY_HERE",
+  "use_sample_data": true,
+  "timeout_seconds": 20,
+  "requests_per_minute": 60,
+  "proxies": {
+    "rotating": [
+      "http://user:password@proxy1.example.com:8000",
+      "http://user:password@proxy2.example.com:8000"
+    ]
+  },
+  "output_directory": "data"
+}
