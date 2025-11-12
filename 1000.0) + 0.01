@@ -1,0 +1,94 @@
+if endpoint == "top_competitors":
+            return [
+                {
+                    "domain": f"{domain}-competitor-{i}.com",
+                    "overlap_score": round(pseudo_rand(i), 2),
+                    "estimated_monthly_clicks": int(5000 + pseudo_rand(i) * 20000),
+                    "organic_keywords": int(500 + pseudo_rand(i) * 2000),
+                    "paid_keywords": int(100 + pseudo_rand(i) * 800),
+                }
+                for i in range(1, 4)
+            ]
+
+        if endpoint == "most_valuable_keywords":
+            return [
+                {
+                    "keyword": f"{domain.split('.')[0]} keyword {i}",
+                    "search_volume": int(1000 + pseudo_rand(i) * 8000),
+                    "estimated_value": round(1.0 + pseudo_rand(i) * 9, 2),
+                    "position": i,
+                    "traffic_share": round(0.05 + pseudo_rand(i) * 0.2, 3),
+                }
+                for i in range(1, 6)
+            ]
+
+        if endpoint == "newly_ranked_keywords":
+            return [
+                {
+                    "keyword": f"{domain.split('.')[0]} new keyword {i}",
+                    "search_volume": int(500 + pseudo_rand(i) * 4000),
+                    "position": int(5 + pseudo_rand(i) * 40),
+                    "trend": "rising" if i % 2 == 0 else "stable",
+                }
+                for i in range(1, 5)
+            ]
+
+        if endpoint == "top_ads":
+            return [
+                {
+                    "headline": f"{domain} ad headline {i}",
+                    "description": f"Ad description {i} for {domain}",
+                    "ad_type": "text",
+                    "landing_page_url": f"https://{domain}/landing-{i}",
+                }
+                for i in range(1, 4)
+            ]
+
+        if endpoint == "domain_stats":
+            return {
+                "organic_keywords": int(2000 + pseudo_rand(1) * 10000),
+                "paid_keywords": int(500 + pseudo_rand(2) * 4000),
+                "estimated_monthly_clicks": int(8000 + pseudo_rand(3) * 40000),
+                "estimated_monthly_budget": round(3000 + pseudo_rand(4) * 12000, 2),
+            }
+
+        LOGGER.warning("Unknown endpoint %s for fake response", endpoint)
+        return {}
+
+    def get_top_competitors(self, domain: str, country: Optional[str]) -> List[Dict[str, Any]]:
+        params = {"domain": domain}
+        if country:
+            params["country"] = country
+        return self._make_request("top_competitors", params)
+
+    def get_most_valuable_keywords(
+        self,
+        domain: str,
+        country: Optional[str],
+    ) -> List[Dict[str, Any]]:
+        params = {"domain": domain}
+        if country:
+            params["country"] = country
+        return self._make_request("most_valuable_keywords", params)
+
+    def get_newly_ranked_keywords(
+        self,
+        domain: str,
+        country: Optional[str],
+    ) -> List[Dict[str, Any]]:
+        params = {"domain": domain}
+        if country:
+            params["country"] = country
+        return self._make_request("newly_ranked_keywords", params)
+
+    def get_top_ads(self, domain: str, country: Optional[str]) -> List[Dict[str, Any]]:
+        params = {"domain": domain}
+        if country:
+            params["country"] = country
+        return self._make_request("top_ads", params)
+
+    def get_domain_stats(self, domain: str, country: Optional[str]) -> Dict[str, Any]:
+        params = {"domain": domain}
+        if country:
+            params["country"] = country
+        return self._make_request("domain_stats", params)
